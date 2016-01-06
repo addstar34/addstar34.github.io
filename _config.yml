@@ -3,7 +3,7 @@
 
 # NB! Set your site's url, otherwise stuff will break :)
 
-url: "https://panossakkos.github.io"
+url: "https://addstar34.github.io"
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (https://yourusername.github.io/repository-name)
@@ -12,27 +12,27 @@ url: "https://panossakkos.github.io"
 #
 # NB! Without this *nothing* will work, because it's used in every path :)
 
-baseurl: /personal-jekyll-theme
+baseurl: /adam
 
 # Google tracking id to track your visitors
 
-google-tracking-id: "UA-35880426-4"
+google-tracking-id: ""
 
 # Forces https everywhere in your website, except when you serve it locally
 # If you are not hosted on Github Pages, and your host doesn't support https
 # then you should disable it
 
-force-https: True
+force-https: False
 
 #############
 # HTML Head #
 #############
 
 lang: "en"
-author: "John Smith"
-title: "{ John Smith }"
-description: "Blog and website of John Smith, blogging mainly for tech. Opinions expressed are mine."
-keywords: "smith, jones, personal, jekyll, theme"
+author: "Adam D'Arcy"
+title: "Adam D'Arcy"
+description: "Blog and website of Adam D'Arcy, blogging mainly for tech but at times other stuff. Opinions expressed are mine."
+keywords: "adam, d'arcy, personal, blog, coding"
 favicon: "/img/favicon.ico"
 404-img: "/img/labtocat.png"
 
@@ -42,7 +42,7 @@ favicon: "/img/favicon.ico"
 
 black-favicon: "/img/black-lab-glass.ico"
 
-background-img: "../img/intro-bg.jpg"
+background-img: "../img/me-kyoto-2048.jpg"
 
 ##############################
 # Dynamic Text on the Header #
@@ -56,10 +56,10 @@ type-speed: 10
 start-delay: 200
 delete-delay: 5000
 lines: # You can add HTML Tags in the Text
-  - text: "The lower you fall, the higher you'll fly."
-  - text: "Where’s your will to be weird?"
+  - text: "Precision beats power and timing beats speed."
+  - text: "Embrace challenges."
 
-me-img: "/img/jetpacktocat.png"
+me-img: "/img/img-name.png" # not current used replaced with btn-circle
 
 ################
 # Web app mode #
@@ -91,11 +91,11 @@ linkedin-share: True
 reddit-share: True
 google-plus-share: True
 tumblr-share: True
-pinterest-share: True
+pinterest-share: False
 pocket-share: True
-vkontakte-share: True
+vkontakte-share: False
 
-disqus-shortname: "panossakkos"
+disqus-shortname: "test"
 
 syntax-highlight: True
 
@@ -104,11 +104,8 @@ syntax-highlight: True
 ############
 
 events:
-  - image: "/img/timeline/spidertocat.png"
-    date: "September 2013 - Today"
-    description: "Saving the neighborhood!"
   - image: "/img/timeline/baracktocat.jpg"
-    date: "September 2007 - August 2013"
+    date: "June 2015"
     description: "Started coding"
 
 # First image of the Timeline
@@ -119,21 +116,17 @@ timeline-img: "/img/timeline/default.png"
 # Contact #
 ###########
 
-email: "your@email.here"
+email: "addstar34@gmail.com"
 
 ##################
 # Social Buttons #
 ##################
 
 social:
-  - title: "facebook"
-    url: "https://facebook.com/"
   - title: "twitter"
-    url: "https://twitter.com/"
+    url: "https://twitter.com/addstar34"
   - title: "github"
-    url: "https://github.com/PanosSakkos/personal-jekyll-theme"
-  - title: "bitcoin"
-    url: "https://blockchain.info/address/1LHuKC9Em3KA5yoZaf7nngnNdf9K7s2gSi"
+    url: "https://github.com/addstar34"
   - title: "rss"
     url: "/feed.xml"
 
