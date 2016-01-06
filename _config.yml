@@ -12,7 +12,7 @@ url: "https://addstar34.github.io"
 #
 # NB! Without this *nothing* will work, because it's used in every path :)
 
-baseurl: /adam
+baseurl: 
 
 # Google tracking id to track your visitors
 
@@ -22,7 +22,7 @@ google-tracking-id: ""
 # If you are not hosted on Github Pages, and your host doesn't support https
 # then you should disable it
 
-force-https: False
+force-https: true
 
 #############
 # HTML Head #
