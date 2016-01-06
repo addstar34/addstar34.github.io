@@ -1,6 +1,6 @@
 # Adam D'Arcy
 
-View [here](https://addstar34.github.io)
+My personal blog. View [here](https://addstar34.github.io)
 
 ## Tech
 
