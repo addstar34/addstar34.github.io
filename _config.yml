@@ -29,10 +29,10 @@ force-https: true
 #############
 
 lang: "en"
-author: "Adam D'Arcy"
-title: "Adam D'Arcy"
-description: "Blog and website of Adam D'Arcy, blogging mainly for tech but at times other stuff. Opinions expressed are mine."
-keywords: "adam, adam d'arcy, personal, blog, coding"
+author: "Adam D"
+title: "Adam D"
+description: "Blog and website of Adam D, blogging mainly for tech but at times other stuff. Opinions expressed are mine."
+keywords: "adam, adam d, personal, blog, coding"
 favicon: "/img/favicon.ico"
 404-img: "/img/labtocat.png"
 
@@ -105,6 +105,9 @@ syntax-highlight: True
 ############
 
 events:
+  - image: "/img/timeline/firehose-project.jpg"
+    date: "August 2015"
+    description: "Began full-stack web dev online apprenticeship"
   - image: "/img/timeline/me-grand-canyon.jpg"
     date: "June 2015"
     description: "Started coding"
