@@ -32,7 +32,7 @@ lang: "en"
 author: "Adam D'Arcy"
 title: "Adam D'Arcy"
 description: "Blog and website of Adam D'Arcy, blogging mainly for tech but at times other stuff. Opinions expressed are mine."
-keywords: "adam, d'arcy, personal, blog, coding"
+keywords: "adam, adam d'arcy, personal, blog, coding"
 favicon: "/img/favicon.ico"
 404-img: "/img/labtocat.png"
 
@@ -96,7 +96,7 @@ pinterest-share: False
 pocket-share: True
 vkontakte-share: False
 
-disqus-shortname: ""
+disqus-shortname: "addstar34"
 
 syntax-highlight: True
 
