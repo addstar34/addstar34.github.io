@@ -25,6 +25,23 @@
 
         {% include pagination.html %}
 
+        <div>
+          <h5>Tag Cloud</h5>
+          {% assign tags = site.tags | sort %}
+          {% for tag in tags %}
+          &nbsp
+           <span class="site-tag">
+              <a href="/tags/{{ tag | first | slugify }}.html"
+                  style="font-size: {{ tag | last | size  |  times: 24 | plus: 80  }}%">
+                      {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+              </a>
+          </span>
+          &nbsp
+          {% endfor %}
+        </div>
+
+        <br /><br />
+
         {% include social-buttons.html %}
 
         </div>

@@ -107,7 +107,7 @@ syntax-highlight: True
 events:
   - image: "/img/timeline/firehose-project.jpg"
     date: "August 2015"
-    description: "Began full-stack web dev online apprenticeship"
+    description: "Began full-stack web dev online apprenticeship <a href = 'http://thefirehoseproject.com' target='_blank'>@theFirehoseProject</a>"
   - image: "/img/timeline/me-grand-canyon.jpg"
     date: "June 2015"
     description: "Started coding"
