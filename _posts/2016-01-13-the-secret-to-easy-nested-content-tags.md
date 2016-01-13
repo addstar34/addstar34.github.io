@@ -23,7 +23,7 @@ content_tag :table do
     end
   end
 end
-# => "&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;HeaderColumn1&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;/table&gt;&lt;"
+# => "&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;HeaderColumn1&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;/table&gt;"
 </code></pre>
 
 Ok cool so far so good I thought, but then I tried to add in the table body section:
