@@ -3,7 +3,7 @@ layout: post
 section-type: post
 title: The Secret to Easy Nested Content_tag's
 category:
-tags: [ 'rails', 'content_tag', 'tables', 'secrets' ]
+tags: [ 'rails', 'content-tag', 'tables', 'secrets' ]
 ---
 
 Today I’m going to show you <strong>How to Create a Table with <code>content_tag</code>'s using the Secret to Easy Nested <code>content_tag</code>‘s.
