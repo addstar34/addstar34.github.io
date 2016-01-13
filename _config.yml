@@ -58,7 +58,6 @@ delete-delay: 5000
 lines: # You can add HTML Tags in the Text
   - text: "Precision beats power."
   - text: "Timing beats speed."
-  - text: "Embrace challenges."
 
 me-img: "/img/img-name.png" # not current used replaced with btn-circle
 

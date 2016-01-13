@@ -2,7 +2,7 @@
 layout: post
 section-type: post
 title: Welcome To My Blog
-category: personal
+category:
 tags: [ 'me', 'personal' ]
 ---
 
