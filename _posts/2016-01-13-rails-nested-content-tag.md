@@ -43,7 +43,9 @@ content_tag(:table,
 # => "<table><thead><tr><th>HeaderColumn1</th></tr></thead><tbody><tr><td>BodyColumn1</td></tr></tbody></table>"
 {% endhighlight %}
 
-While this is easier to write it can become a little hard to read when you start adding options like `class`es or `id`’s to your `content_tag` as this goes after the nested content. So I found myself writing the blocks using a combination of `do` and `()`. Here's an example of a deeply nested content_tag I wrote. It also includes some conditionals.
+While this is easier to write it can become a little hard to read when you start adding options like `class`es or `id`’s to your `content_tag` as this goes after the nested content. So I found myself writing the blocks using a combination of `do` and `()`.
+
+Here's an example of a deeply nested content_tag I wrote. It iterates over a hash using map so requires the use of `join` and 'html_safe', and it also includes some conditionals.
 
 {% highlight ruby %}
 content_tag :div, class: "row rest-avail-row" do
