@@ -4,11 +4,5 @@ title: Projects
 permalink: /projects/
 ---
 
-### [Latest Project](https://github.com/)
-Have recently started a new project.
-
-***
-
-### [Restaurant Booking App](https://github.com/)
-
-Details coming soon.
+Coming soon...  
+I will be posting some of my projects here and possibly writing a blog posts about each of them.
