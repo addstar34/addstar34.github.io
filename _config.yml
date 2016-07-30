@@ -1,169 +1,81 @@
+#
+# This file contains configuration flags to customize your site
+#
 
-# Site settings
+# Name of your site (displayed in the header)
+name: Adam D
 
-# NB! Set your site's url, otherwise stuff will break :)
+# Short bio or description (displayed in the header)
+description: Addstar / Adds / Adam
 
-url: "https://addstar34.github.io"
+
+#
+# Flags below are optional
+#
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email: addstar34@gmail.com
+  facebook:
+  flickr:
+  github: addstar34
+  instagram:
+  linkedin:
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  twitter:
+  stackoverflow: # your stackoverflow profile, e.g. "users/"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
+
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus: addstar34
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics: UA-81611751-1
+
+# Your website URL
+# Used for Sitemap.xml and your RSS feed
+url:
 
 # If you're hosting your site at a Project repository on GitHub pages
-# (https://yourusername.github.io/repository-name)
-# and NOT your user repository (https://yourusername.github.io)
+# (http://yourusername.github.io/repository-name)
+# and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
+baseurl: ""
+
 #
-# NB! Without this *nothing* will work, because it's used in every path :)
+# !! You don't need to change any of the configuration flags below !!
+#
 
-baseurl: 
+permalink: /:title/
 
-# Google tracking id to track your visitors
+# Jekyll 3 now only supports Kramdown for Markdown
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
 
-google-tracking-id: ""
-
-# Forces https everywhere in your website, except when you serve it locally
-# If you are not hosted on Github Pages, and your host doesn't support https
-# then you should disable it
-
-force-https: true
-
-#############
-# HTML Head #
-#############
-
-lang: "en"
-author: "Adam D"
-title: "Adam D"
-description: "Blog and website of Adam D, blogging mainly for tech but at times other stuff. Opinions expressed are mine."
-keywords: "adam, adam d, personal, blog, coding"
-favicon: "/img/favicon.ico"
-404-img: "/img/labtocat.png"
-
-################
-# Header layout #
-################
-
-black-favicon: "/img/black-lab-glass.ico"
-
-background-img: "../img/me-kyoto-2048.jpg"
-
-##############################
-# Dynamic Text on the Header #
-##############################
-
-dynamic-typing: True
-shuffle: True # Shuffle the lines.
-loop: True
-loop-count: False # Set False for infinite loop, or set any number for finite loop.
-type-speed: 10
-start-delay: 200
-delete-delay: 5000
-lines: # You can add HTML Tags in the Text
-  - text: "Precision beats power."
-  - text: "Timing beats speed."
-
-me-img: "/img/img-name.png" # not current used replaced with btn-circle
-
-################
-# Web app mode #
-################
-
-web-app-mode: True
-
-# Icons for Web App mode
-
-icon-36p: "/img/web-app/icon-36p.png"
-icon-48p: "/img/web-app/icon-48p.png"
-icon-72p: "/img/web-app/icon-72p.png"
-icon-96p: "/img/web-app/icon-96p.png"
-icon-144p: "/img/web-app/icon-144p.png"
-icon-192p: "/img/web-app/icon-192p.png"
-
-########
-# Blog #
-########
-
-post-preview-words: 96
-
-paginate: 5
-
-email-share: True
-fb-share: True
-twitter-share: True
-linkedin-share: True
-reddit-share: True
-google-plus-share: True
-tumblr-share: True
-pinterest-share: False
-pocket-share: True
-vkontakte-share: False
-
-disqus-shortname: "addstar34"
-
-syntax-highlight: True
-
-############
-# Timeline #
-############
-
-events:
-  - image: "/img/timeline/firehose-project.jpg"
-    date: "August 2015"
-    description: "Began full-stack web dev online apprenticeship <a href = 'http://thefirehoseproject.com' target='_blank'>@theFirehoseProject</a>"
-  - image: "/img/timeline/me-grand-canyon.jpg"
-    date: "June 2015"
-    description: "Started coding"
-
-# First image of the Timeline
-
-timeline-img: "/img/timeline/me-snowboarding.jpg"
-
-###########
-# Contact #
-###########
-
-email: "addstar34@gmail.com"
-
-##################
-# Social Buttons #
-##################
-
-social:
-  - title: "twitter"
-    url: "https://twitter.com/addstar34"
-  - title: "github"
-    url: "https://github.com/addstar34"
-  - title: "rss"
-    url: "/feed.xml"
-
-############
-# 404 page #
-############
-
-404-img: "/img/labtocat.png"
-
-################################################################################
-
-# NB! Tread carefully if you want to change the variables below this point!
-
-# Sections shown in the index page
-
-pages_list:
-  About: 'about'
-  Blog: 'latest-post'
-  Timeline: 'timeline'
-  Contact: 'contact'
-
-# Exclusion list from the generated _site
-
-exclude: ["LICENSE", "README.md", "CONTRIBUTING", "CONTRIBUTORS", "scripts"]
-
-# Pagination path
-
-paginate_path: "blog/page:num/"
-
-# Enable minification SASS
-
+# Set the Sass partials directory, as we're using @imports
 sass:
-  style: compressed
+  style: :expanded # You might prefer to minify using :compressed
 
+# Use the following plug-ins
 gems:
-  - jekyll-paginate
-  - jemoji
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+
+# Exclude these files from your production _site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME

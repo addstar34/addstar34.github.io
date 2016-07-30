@@ -4,12 +4,13 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Full Stack Developer, alumni of and professionally mentored at <a href="http://thefirehoseproject.com" target="_blank" style="color: #8476ad">theFirehoseProject</a>.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+Technology / Startups / Health and Fitness / Financial Markets / Travel / Snowboarding / Poker / Cars / Motorbikes / Jetskiing / Wakeboarding / MMA UFC / Coffee / Reading / Self Development
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+Based in beautiful Brisbane, Australia.
+
+## Contact me
+
+If we share some common interests particularly in tech startups then feel free to drop me a line and say g’day mate!
+<a href="mailto:addstar34@gmail.com" style="color: #8476ad">addstar34@gmail.com</a>
