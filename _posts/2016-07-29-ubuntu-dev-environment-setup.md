@@ -120,9 +120,23 @@ Check instructions at https://nodejs.org/ but at the time of writing these were
 `sudo apt-get install -y nodejs`  
 Note to self: look into using nvm (node version manager)
 
-## Update NPM
+## Update NPM and Fix NPM Permissions
 Nodejs includes NPM run the following to update to the latest version  
-`sudo npm install npm -g`
+`sudo npm install npm -g`  
+Install a package  
+`npm install -g jshint`  
+If you get an EACCS error there are 3 fixes explained here  
+https://docs.npmjs.com/getting-started/fixing-npm-permissions  
+I went with option 2 Change npm's default directory  
+`mkdir ~/.npm-global`  
+Configure npm to use the new directory path  
+`npm config set prefix '~/.npm-global'`  
+Add the following line to ~/.profile  
+`echo 'export PATH=~/.npm-global/bin:$PATH > ~/.profile'`  
+Update system variables  
+`source ~/.profile`  
+Test downloading a package globally without using sudo  
+`npm install -g jshint`
 
 ## Manage rails versions via bundler
 Create a rails project and specify version  
