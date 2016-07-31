@@ -139,7 +139,7 @@ I went with option 2 Change npm's default directory
 Configure npm to use the new directory path  
 `npm config set prefix '~/.npm-global'`  
 Add the following line to ~/.profile  
-`echo 'export PATH=~/.npm-global/bin:$PATH > ~/.profile'`  
+`echo 'export PATH=~/.npm-global/bin:$PATH >> ~/.profile'`  
 Update system variables  
 `source ~/.profile`  
 Test downloading a package globally without using sudo  
