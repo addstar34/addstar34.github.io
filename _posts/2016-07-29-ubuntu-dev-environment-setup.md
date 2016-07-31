@@ -8,7 +8,9 @@ Pre-built development environments are common these days via either a cloud serv
 
 ###### **This is my no fluff guide to building a Ubuntu Dev Environment in VirtualBox.**
 
-It includes: SSH setup, shared folders between your host machine and Ubuntu (so can always access your code without having to power on the VirtualBox), managing and installing Ruby versions with Rbenv, installing Postgresql, managing Rails versions and gems with bundler, installing nodejs and finally disabling the Ubuntu GUI so you can start the VirtualBox in headless mode and just use a terminal.
+This guide will get you to the stage where you can start up a rails project but it does include Nodejs and NPM. It also includes:
+
+SSH setup, shared folders between your host machine and Ubuntu (so can always access your code without having to power on the VirtualBox), managing and installing Ruby versions with Rbenv, installing Postgresql, managing Rails versions and gems with bundler, installing nodejs and finally disabling the Ubuntu GUI so you can start the VirtualBox in headless mode and just use a terminal.
 
 
 ## List of packages/software that will be needed
@@ -118,6 +120,10 @@ Check instructions at https://nodejs.org/ but at the time of writing these were
 `sudo apt-get install -y nodejs`  
 Note to self: look into using nvm (node version manager)
 
+## Update NPM
+Nodejs includes NPM run the following to update to the latest version  
+`sudo npm install npm -g`
+
 ## Manage rails versions via bundler
 Create a rails project and specify version  
 `cd /projects`  
@@ -159,3 +165,5 @@ To start the GUI from this state from the VM terminal run
 `sudo /etc/init.d/lightdm start`
 
 From now on when starting the vm start it in headless mode and access via terminal.
+
+Now doesn't that feel good working with a nice clean setup :)
