@@ -61,6 +61,13 @@ Then reboot
 
 Remember to create your projects in /media/sf_[ShareName] so you can always access them without having to power up the virtual box.
 
+## Enable Symlinks
+You might run into some errors about 'erofs read-only file system symlink' when using shared folders and downloading some npm packages. For example I ran into this issue when downloading react to a shared project folder.  
+To fix this you need to run the following on your shared folder  
+`VBboxManage setextradata "[VM Name]" VBoxInternal2/SharedFoldersEnableSymlinksCreate/[sharename] 1`  
+note this is 1 line to execute, replace [VM Name] and [sharename]. For example on windows I opened command and ran  
+'"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" setextradata "ubuntu1604" VBoxInternal2/SharedFoldersEnableSymlinksCreate/dev 1'
+
 ## Git
 Install Git  
 `sudo apt-get install git`
