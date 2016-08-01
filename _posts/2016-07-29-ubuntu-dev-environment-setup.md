@@ -34,6 +34,7 @@ SSH setup, shared folders between your host machine and Ubuntu (so can always ac
 - Postgresql  
 - Nodejs  
 - Npm  
+- Heroku Toolbelt
 
 ## Update apt-get
 This ensures when installing packages they’re the latest version  
@@ -165,7 +166,15 @@ Before starting the rails server forward a port in VirtualBox
 Start rails server setting the IP address  
 `rails s -b 0.0.0.0`
 
-You can repeat these steps to create another project with a different rails version.
+You can repeat these steps to create another project with a different rails version.  
+
+## Heroku Toolbelt
+Check the latest instructions here  
+https://toolbelt.heroku.com  
+At the time of writing this was  
+`wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh`  
+Install heroku accounts for managing multiple accounts i.e. personal, work and/or client  
+`heroku plugins:install heroku-accounts`  
 
 ## Disable Ubuntu GUI
 From within the Ubuntu Gui  
