@@ -4,7 +4,7 @@ title: Ruby Tidbits - Unless and Conditional Assignments
 author: Adam D
 ---
 
-A short post on writing more readable and shorter code using the unless statement and conditional assignments.
+A short post on writing more readable code using the unless statement and how to write less code for conditional assignments.
 
 ## Unless Statement
 Using unless instead of if can make code more readable.  
