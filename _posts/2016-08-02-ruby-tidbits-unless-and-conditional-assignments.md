@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ruby Tidbits - Unless and Condition Assignments
+title: Ruby Tidbits - Unless and Conditional Assignments
 author: Adam D
 ---
 
