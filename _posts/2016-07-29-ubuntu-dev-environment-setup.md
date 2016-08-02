@@ -37,7 +37,7 @@ SSH setup, shared folders between your host machine and Ubuntu (so can always ac
 - Heroku Toolbelt
 
 ## Create VirtualBox and Install Ubuntu
-Create a new virtual machine in VirtualBox and install Ubuntu. I used Ubuntu 16.04. This is fairly straight forward so I won't go into detail on this unless I get some comments requesting so.
+Create a new virtual machine in VirtualBox and install Ubuntu. I used Ubuntu 16.04. This is fairly straight forward so I won't go into detail on this unless I get some comments requesting so. Once Ubuntu is installed you can follow the rest of the guide by logging into Ubuntu and opening up a terminal.
 
 ## Update apt-get
 This ensures when installing packages they’re the latest version  
