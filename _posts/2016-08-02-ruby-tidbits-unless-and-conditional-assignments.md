@@ -22,7 +22,8 @@ unless authorized puts “access denied”
  When using unless I like to read the code and see how well it flows. For example I would not use unless when testing for nil because if something reads better, also using unless probably isn’t a good idea when there’s multiple conditions.
 
 ## Shorthand Conditional Assignments
-A shorthand way to write a conditional assignment while checking for a nil value is to use `||=`  
+A shorthand way to write a conditional assignment while checking for a nil value is to use `||=` which means 'or equals'.
+
 In the following example the time key in the options hash is checked and if it is nil then time is set to UTC.
 
 {% highlight ruby %}
@@ -33,7 +34,8 @@ options[:time] = ‘UTC’ if options[:time].nil?
 options[:time] ||= ‘UTC’
 {% endhighlight %}
 
-If you want to write a conditional with an if else statement this can actually be written in a long, medium and a short way!
+If you want to write a conditional with an `if else` statement this can actually be written in a long, medium and a short way!
+
 In the following example if the user is signed in then time is set to the users time zone else its set to UTC.
 
 {% highlight ruby %}
