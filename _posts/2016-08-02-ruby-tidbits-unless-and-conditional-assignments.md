@@ -12,10 +12,14 @@ The best time to use unless is instead of writing a negative if statement.
 
 {% highlight ruby %}
 # negative if statement
-if !authorized puts “access denied”
+if !authorized
+  puts “access denied”
+end
 
 # same statement but using unless reads better
-unless authorized puts “access denied”
+unless authorized
+  puts “access denied”
+end
 
 {% endhighlight %}
 
