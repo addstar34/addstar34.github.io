@@ -6,6 +6,11 @@ author: Adam D
 
 DRAFT------------------
 
+add active record to the title
+if automating the renaming process search for singular, plural. Don't replace everything!
+
+
+
 create a migration
 - remove indexes
 - rename table
