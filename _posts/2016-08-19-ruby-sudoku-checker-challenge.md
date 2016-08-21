@@ -6,7 +6,7 @@ author: Adam D
 
 This came up as a code challenge on Codewars and I enjoyed it so why not blog about it. It includes learnings of Arrays and Enumerable.
 
-My solution to the problem wasn't the best but the beauty of Codewars is I can see solutions from other programmers and learn from them. So, I'm going to breakdown one of the solutions I really liked.
+My solution to the problem wasn't the best but the beauty of Codewars is I can see solutions from other programmers and learn from them. So, I'm going to breakdown one of the solutions I really liked, after I refactored it a tiny bit to make it better ;)
 
 # The Rules of Sudoku
 
@@ -40,25 +40,25 @@ The sudoku board will be represented as an array of arrays like so:
 
 {% highlight ruby %}
 class Array
-  def sum
-    self.inject { |a, i| a + i }
+  def valid?
+    /\A[1-9]{9}\z/ === uniq.join
   end
 end
 
 def sudoku_checker(board)
   board.each_with_index do |line, x|
-    return 'Try again!' if line.sum != 45
+    return 'Try again!' unless line.valid?
 
     if [0,3,6].include?(x)
       [0,3,6].each do |y|
       	region = board[x][y, 3] + board[x + 1][y, 3] + board[x + 2][y, 3]
-        return 'Try again!' if region.sum != 45
+        return 'Try again!' unless line.valid?
       end
     end
   end
 
   board.transpose.each do |line|
-    return 'Try again!' if line.sum != 45
+    return 'Try again!' unless line.valid?
   end
 
   'Finished!'
@@ -83,39 +83,61 @@ Then within the `sudoku_checker` method we can break that down into 2 sections a
 
 {% highlight ruby %}
 class Array
+  def valid?
+    /\A[1-9]{9}\z/ === uniq.join
+  end
+end
+{% endhighlight %}
+
+This is opening up the Array class and creating a new method for it called `valid?`. In this method we are using a regular expression to validate each row, column and region.
+
+The part on the left is the regex. A regex is used to match patterns against strings, which tells us the part on the right has to be a string to compare against.
+
+The regex starts and finishes with `/` with the contents within setting the pattern to be matched. The pattern we are matching is broken down like this.
+
+`\A` the match must start at the beginning of the string  
+`[1-9]` the match must be a number from 1 to 9  
+`{9}` the match must occur 9 times  
+`\z` the match must finish at the end of the string
+
+So basically we're looking for a pattern of numbers from 1 to 9. Note that this could include duplicate numbers but we'll see why that will fail with the other side of the regex.
+
+On the other side of this statement we have `uniq.join`. This takes the calling array, and calls the array method `uniq` on it which will return a new array with unique values. This is what prevents duplicate numbers from passing, as the regex is looking for 9 matches. Then on this new array we call the array method `join` which returns a string by converting each element of the array to a string and joining them together.
+
+Creating this new method gives us a nice clean way to check each row, column and region as this checking takes place a few times through the code.
+
+The original solution before I refactored it was doing this instead:
+
+{% highlight ruby %}
+class Array
   def sum
     self.inject { |a, i| a + i }
   end
 end
 {% endhighlight %}
 
-This is opening up the Array class and creating a new method for it called sum. This method takes self (which will be an array as we’ve added this new method to the array class) and calls the inject method on it. The inject method comes from the enumerable module which is included in the Array class by default.
+This method was being used on each row, column and region to check the sum of the array equaled 45 as the sum of the numbers 1 to 9 equals 45. While this passed the tests for the challenge, it didn't actually pass the problem description as a board of all `5`s would pass even though thats not correct as it has duplicates.
 
-The inject method iterates over the array running the block. It has 2 `block parameters`. The first is an accumulator and the second will be the value of each array element as it iterates over them. The accumulator parameter stores the result of the block and passes it to the next iteration.
+The lesson here, create robust tests (or in code challenges use that weakness to win? :P)
 
-A whole post could be written on the `inject` method but in short and in this case it will sum the values of an array.
-
-Creating this new method gives us a nice clean way to call inject on an array as it will be used a few times in this challenge.
-
-The reason for doing this is because the easiest way to know if a row, column or region is correct is summing the values and checking if they equal 45.
 
 ## 2. The `sudoku_checker` method
 
 {% highlight ruby %}
 def sudoku_checker(board)
   board.each_with_index do |line, x|
-    return 'Try again!' if line.sum != 45
+    return 'Try again!' unless line.valid?
 
     if [0,3,6].include?(x)
       [0,3,6].each do |y|
       	region = board[x][y, 3] + board[x + 1][y, 3] + board[x + 2][y, 3]
-        return 'Try again!' if region.sum != 45
+        return 'Try again!' unless line.valid?
       end
     end
   end
 
   board.transpose.each do |line|
-    return 'Try again!' if line.sum != 45
+    return 'Try again!' unless line.valid?
   end
 
   'Finished!'
@@ -130,12 +152,12 @@ Lets break it down further and look at each section.
 
 {% highlight ruby %}
 board.each_with_index do |line, x|
-  return 'Try again!' if line.sum != 45
+  return 'Try again!' unless line.valid?
 
   if [0,3,6].include?(x)
     [0,3,6].each do |y|
       region = board[x][y, 3] + board[x + 1][y, 3] + board[x + 2][y, 3]
-      return 'Try again!' if region.sum != 45
+      return 'Try again!' unless line.valid?
     end
   end
 end
@@ -145,7 +167,7 @@ This block of code will first check the rows, create a region and then check the
 
 The first part of this method is taking the board and calling the `each_with_index` enumerable method on it. The 2 `block parameters` are self explanatory, the first is the value of the array and the second is the index. So, the value will be each sub array i.e. a row and the index is each of the rows.
 
-On the next line we are calling the previously declared sum method on the first value which is the first sub array. Then as stated above it will sum the array and boom! the first row has now been checked.
+On the next line we are calling the previously declared `valid?` method on the first value which is the first sub array. Boom! the first row has now been checked.
 
 Now we're still in the first pass of `board.each_with_index do |line, x|` and the next part is the following conditional.
 
@@ -153,7 +175,7 @@ Now we're still in the first pass of `board.each_with_index do |line, x|` and th
 if [0,3,6].include?(x)
   [0,3,6].each do |y|
     region = board[x][y, 3] + board[x + 1][y, 3] + board[x + 2][y, 3]
-    return 'Try again!' if region.sum != 45
+    return 'Try again!' unless line.valid?
   end
 end
 {% endhighlight %}
@@ -164,10 +186,10 @@ Now the next line is simply iterating over the array `[0,3,6]` using the array m
 
 {% highlight ruby %}
 region = board[x][y, 3] + board[x + 1][y, 3] + board[x + 2][y, 3]
-return 'Try again!' if region.sum != 45
+return 'Try again!' unless line.valid?
 {% endhighlight %}
 
-This part of code is actually forming the regions as an array and then calls our `array.sum` method to the region. Lets break down how it creates the regions.
+This part of code is actually forming the regions as an array and then calls our array `valid?` method on the region. Lets break down how it creates the regions.
 
 {% highlight ruby %}
 region = board[x][y, 3] + board[x + 1][y, 3] + board[x + 2][y, 3]
@@ -183,7 +205,7 @@ This is taking the whole `board` array and getting index `[x]` which is also an 
 
 Then next 2 parts of the sum are exactly the same except when we access the board array we are saying access the sub array at position `[x + 1]` and then `[x + 2]`. So this will give us the first 3 values of 2 and the first 3 values of row 3, adding them all together into an array.
 
-We just created the first region! And like before we simply check this region by calling the sum method we created on it.
+We just created the first region! And like before we simply check this region by calling the array `valid?` method we created on it.
 
 So we've just created and checked the first region on the first pass of `[0,3,6].each do |y|` so now it goes for the second pass. The second pass creates a region for the first 3 rows starting at column 3 as on the second pass `y` equals 3, and then the third pass is the same starting at column 6.
 
@@ -193,15 +215,15 @@ Now we know how the checking of rows, creating of regions and checking of region
 
 {% highlight ruby %}
 board.transpose.each do |line|
-  return 'Try again!' if line.sum != 45
+  return 'Try again!' unless line.valid?
 end
 {% endhighlight %}
 
 This block of code will create the columns and check the columns.
 
-To create the columns the array method `transpose` is called on the `board` array. The `transpose` method assumes an arrray of arrays and transposes the rows and columns. A gotcha when using `transpose` is that the length of sub arrays must match or an error will be raised.
+To create the columns the array method `transpose` is called on the `board` array. The `transpose` method assumes an array of arrays and transposes the rows and columns. A gotcha when using `transpose` is that the length of sub arrays must match or an error will be raised.
 
-After the transposing we simply iterate over each column and call our `sum` method.
+After the transposing we simply iterate over each column and call our `valid?` method.
 
 **Sudoku checker complete!**
 
