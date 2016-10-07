@@ -27,6 +27,13 @@
      }
  }
 
+ .post > h1 {
+   margin-bottom: 0;
+   + p {
+     margin: 0;
+   }
+ }
+
  .post-heading {
         a {
          color: $hl-color;
