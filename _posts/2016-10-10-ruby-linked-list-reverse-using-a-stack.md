@@ -153,3 +153,5 @@ The output will look like so:
 ---------
 9 --> 62 --> 34 --> nil
 {% endhighlight %}
+
+The full code can be found on my github [here](https://github.com/addstar34/code-challenges/blob/master/linked-list/linked-list-1.rb)
