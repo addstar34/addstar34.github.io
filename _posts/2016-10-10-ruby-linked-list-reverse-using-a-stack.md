@@ -73,8 +73,83 @@ A stack is an abstract data type and has 2 principal operations; `push` to add e
 
 # My Stack Class Implementation
 
-Now this is where the fun began! I had to create a Stack class and implement the 2 princiapl operations of `push` and `pop`.
+Now this is where the fun began! I had to create a Stack class and implement the 2 principal operations (methods) of `push` and `pop` and here it is.
 
+{% highlight ruby %}
+class Stack
+  attr_reader :data
+
+  def initialize
+    @data = nil
+  end
+
+  def push(value)
+    @data = LinkedListNode.new(value, @data)
+  end
+
+  def pop
+    return print "nil\n" if @data.nil?
+    print "#{@data.value}\n"
+    @data = @data.next_node
+  end
+end
+{% endhighlight %}
+
+What's happening here is when a value is pushed onto the stack it will create a new `LinkedListNode` using the value, while the pointer will become what `@data` was previously, this could be nil or a previously pushed LinkedListNode.
+
+Then when we `pop` from the stack it prints `@data.value` which is at the top of the stack and then it will set the stack to be the `next_node` thus removing the top `LinkedListNode` from the stack.
+
+We can use the stack like so:
+
+{% highlight ruby %}
+stack = Stack.new
+stack.push(1)
+stack.push(2)
+stack.push(3)
+stack.pop
+# => 3
+stack.pop
+# => 2
+stack.pop
+# => 1
+stack.pop
+# => nil
+{% endhighlight %}
 
 
 # Reverse the Linked List using a Stack
+
+Reversing the linked list after creating the stack was easy as I knew all I need to do was to traverse the linked list `push`ing each value onto the stack until the end of the linked list.
+
+{% highlight ruby %}
+def reverse_list(list)
+  stack = Stack.new
+  while list
+    stack.push(list.value)
+    list = list.next_node
+  end
+
+  return stack.data
+end
+{% endhighlight %}
+
+To put it all together and to complete the challenge of reversing the linked list do the following:
+
+{% highlight ruby %}
+node1 = LinkedListNode.new(9)
+node2 = LinkedListNode.new(62, node1)
+node3 = LinkedListNode.new(34, node2)
+
+print_values(node3)
+puts "---------"
+revlist = reverse_list(node3)
+print_values(revlist)
+{% endhighlight %}
+
+The output will look like so:
+
+{% highlight text %}
+34 --> 62 --> 9 --> nil
+---------
+9 --> 62 --> 34 --> nil
+{% endhighlight %}
