@@ -6,6 +6,10 @@ author: Adam D
 
 In this challenge I learned about 2 new data structures; a linked list and a stack and how to implement them by hand. The challenge was specially to create a stack class and then reverse the linked list using this stack.
 
+This part 1 of 3 on linked lists. See my other posts here:  
+[Ruby Linked List Pt2 Reverse using mutation]({% link _posts/2016-10-11-ruby-linked-list-reverse-using-mutation.md %})  
+[Ruby Linked List Pt3 Floyd's Cycle Detection]({% link _posts/2016-10-12-ruby-linked-list-floyds-cycle-detection.md %})
+
 # What is a Linked List
 
 A linked list is linear data structure that consisting of 2 elements. A data element, also known as a node, and a pointer element to the next node. The start or entry point of a linked list is called the head and last node will have a pointer of null.
