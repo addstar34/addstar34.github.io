@@ -34,4 +34,45 @@ Within this statement we first store the `next_node` which will become our `list
 
 The next line is where the recursion happens. Here the method `reverse_list` is calling itself and passing in the 2 arguments. The first argument I just covered and the second argument is what we want to be the previous node, which is the current `list`.
 
+Now we can test it out using the following code which includes the linked list class and the print_values method from [Ruby Linked List Pt1 Reverse using a Stack]({% link _posts/2016-10-10-ruby-linked-list-reverse-using-a-stack.md %})
+
+{% highlight ruby %}
+class LinkedListNode
+  attr_accessor :value, :next_node
+
+  def initialize(value, next_node=nil)
+    @value = value
+    @next_node = next_node
+  end
+end
+
+def reverse_list(list, previous=nil)
+  if list
+    next_node = list.next_node
+    list.next_node = previous
+    reverse_list(next_node, list)
+  end
+end
+
+def print_values(list_node)
+  if list_node
+    print "#{list_node.value} --> "
+    print_values(list_node.next_node)
+  else
+    print "nil\n"
+    return
+  end
+end
+
+node1 = LinkedListNode.new(37)
+node2 = LinkedListNode.new(99, node1)
+node3 = LinkedListNode.new(12, node2)
+node4 = LinkedListNode.new(54, node3)
+
+print_values(node4)
+puts "---------"
+reverse_list(node4)
+print_values(node1)
+{% endhighlight %}
+
 The full code can be found on my github [here](https://github.com/addstar34/code-challenges/blob/master/linked-list/linked-list-2.rb)
