@@ -6,6 +6,10 @@ author: Adam D
 
 In the previous blog post I reversed a linked list using a stack. In this challenge I had to reverse a linked list using a mutation to modify the initial list.
 
+This part 2 of 3 on linked lists. See my other posts here:  
+[Ruby Linked List Pt1 Reverse using a Stack]({% link _posts/2016-10-10-ruby-linked-list-reverse-using-a-stack.md %})  
+[Ruby Linked List Pt3 Floyd's Cycle Detection]({% link _posts/2016-10-12-ruby-linked-list-floyds-cycle-detection.md %})
+
 # My Solution
 
 My solution was to use recursion and that was mainly due to the `print_value` method using recursion and staring me right in the face, but I guess an iterative approach could have been used as well. To be honest I'm not entirely sure when its best to use an iterative approach vs a recursive approach (more learning required on that).
