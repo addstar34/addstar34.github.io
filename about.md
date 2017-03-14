@@ -8,8 +8,6 @@ Full Stack Developer, alumni of and professionally mentored at <a href="http://t
 
 Technology / Startups / Health and Fitness / Financial Markets / Travel / Snowboarding / Poker / Cars / Motorbikes / Jetskiing / Wakeboarding / MMA UFC / Coffee / Reading / Self Development
 
-Based in beautiful Brisbane, Australia.
-
 ## Contact me
 
 If we share some common interests particularly in tech startups then feel free to drop me a line and say g’day mate!
